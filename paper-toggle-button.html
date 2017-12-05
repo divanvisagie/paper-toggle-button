@@ -32,6 +32,8 @@ Custom property | Description | Default
 ----------------|-------------|----------
 `--paper-toggle-button-unchecked-bar-color` | Slider color when the input is not checked | `#000000`
 `--paper-toggle-button-unchecked-button-color` | Button color when the input is not checked | `--paper-grey-50`
+`--paper-toggle-button-disabled-bar-color` | Slider color when the input is disabled | `#000000`
+`--paper-toggle-button-disabled-button-color` | Button color when the input is disabled | `--paper-grey-50`
 `--paper-toggle-button-unchecked-ink-color` | Selected/focus ripple color when the input is not checked | `--dark-primary-color`
 `--paper-toggle-button-checked-bar-color` | Slider button color when the input is checked | `--primary-color`
 `--paper-toggle-button-checked-button-color` | Button color when the input is checked | `--primary-color`
@@ -117,9 +119,16 @@ In order to apply the `Roboto` font to this element, make sure you've imported `
         @apply --paper-toggle-button-checked-bar;
       }
 
+      :host([disabled][checked]) .toggle-bar {
+        background-color: var(--paper-toggle-button-disabled-bar-color, #000);
+        opacity: 0.5;
+      }
       :host([disabled]) .toggle-bar {
         background-color: #000;
         opacity: 0.12;
+      }
+      :host([disabled][checked]) .toggle-container {
+        opacity: 0.6;
       }
 
       :host([checked]) .toggle-button {
@@ -133,6 +142,10 @@ In order to apply the `Roboto` font to this element, make sure you've imported `
         @apply --paper-toggle-button-checked-button;
       }
 
+      :host([disabled][checked]) .toggle-button {
+        background-color:var(--paper-toggle-button-disabled-button-color,#bdbdbd);
+        opacity: 1;
+      }
       :host([disabled]) .toggle-button {
         background-color: #bdbdbd;
         opacity: 1;

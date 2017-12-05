@@ -55,6 +55,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </template>
       </demo-snippet>
 
+      <h3>Toggle buttons can be styled using custom properties when they are disabled</h3>
+      <demo-snippet class="centered-demo">
+        <template>
+          <custom-style>
+            <style is="custom-style">
+              paper-toggle-button.green {
+                --paper-toggle-button-disabled-bar-color:  var(--paper-green-500);
+                --paper-toggle-button-disabled-button-color:  var(--paper-green-500);
+              }
+            </style>
+          </custom-style>
+
+          <paper-toggle-button disabled>Toggle</paper-toggle-button>
+          <paper-toggle-button disabled checked>Toggle</paper-toggle-button>
+
+          <paper-toggle-button class="green" disabled>Toggle</paper-toggle-button>
+          <paper-toggle-button class="green" disabled checked>Toggle</paper-toggle-button>
+        </template>
+      </demo-snippet>
+
+
     <h3>Toggle buttons can be styled using custom properties</h3>
       <demo-snippet class="centered-demo">
         <template>
